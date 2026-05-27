@@ -11,13 +11,17 @@ int main()
 
     for(int i=0;i<999;i++){
         if(n[i]==0 && x[i]==0) break;
-
-        int sumx = 0;
         for(int j=1;j<=n[i];j++){
             for(int k=1;k<=n[i];k++){
+                if(j==k || j>k){
+                    continue;
+                }
                 for(int l=1;l<=n[i];l++){
-                    sumx=j+k+l;
-                    if(sumx==x[i]){
+                    if(k==l || j==l || k>l){
+                        continue;
+                    }
+                    else if(j+k+l==x[i]){
+                        printf("%d+%d+%d=%d\n",j,k,l,x[i]);
                         sum++;
                     }
                 }
