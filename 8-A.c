@@ -2,19 +2,23 @@
 #include <string.h>
 
 int main(){
-    char s[1200];
-    scanf("%s",s);
-
-    for(int i=0;i<1200;i++){
-        if(s[i]>=65&&s[i]<=90){
-            s[i]=s[i]+32;
+    char s;
+    
+    while(1){
+        scanf("%c",&s);
+        if(s=='\n'){
+            break;
         }
-        else if(s[i]>=97&&s[i]<=122){
-            s[i]=s[i]-32;
+        if(s>=65&&s<=90){
+            s=s+32;
+        }
+        else if(s>=97&&s<=122){
+            s=s-32;
         }
         else{
-            s[i]=s[i];
+            s=s;
         }
+        printf("%c",s);
     }
-    printf("%s",s);
+    puts("");
 }
